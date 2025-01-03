@@ -7,7 +7,7 @@
 const person = {
     name: "Sasha",
     age: 25,
-    job:"Farm",
+    job: "Farm",
 }
 
 // Доступ до властивостей: Виведіть на консоль ім'я створеного об'єкта person.
@@ -23,7 +23,7 @@ person.age = 26;
 
 // Додавання нових властивостей: Додайте до об'єкта person властивість місце_роботи
 // зі значенням.
-person.workPlace = {city: "Vora", address: "Shevchenko",}
+person.workPlace = { city: "Vora", address: "Shevchenko", }
 
 // Видалення властивостей: Видаліть властивість професія з об'єкта person.
 // console.log(person.workPlace.address);
@@ -54,7 +54,7 @@ person.workPlace = {city: "Vora", address: "Shevchenko",}
 // const arr = Object.keys(person);
 // for (let element of arr) {
 //     console.log(`${element}: ${person['age']}`);
-    
+
 // }
 
 // const x = 'name'
@@ -68,8 +68,8 @@ person.workPlace = {city: "Vora", address: "Shevchenko",}
 // вітання з іменем особи.
 
 person.sayHello = function () {
-    console.log("Hello",this.name);
-    
+    console.log("Hello", this.name);
+
 }
 person.sayHello();
 
