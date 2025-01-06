@@ -4,11 +4,11 @@
 
 // Створення об'єкта: Створіть об'єкт person, який містить властивості ім'я, вік та
 // професія.
-const person = {
-    name: "Sasha",
-    age: 25,
-    job: "Farm",
-}
+// const person = {
+//     name: "Sasha",
+//     age: 25,
+//     job: "Farm",
+// }
 
 // Доступ до властивостей: Виведіть на консоль ім'я створеного об'єкта person.
 
@@ -17,13 +17,13 @@ const person = {
 
 
 // Зміна властивостей: Змініть вік в об'єкті person на нове значення.
-person.age = 26;
+// person.age = 26;
 
 
 
 // Додавання нових властивостей: Додайте до об'єкта person властивість місце_роботи
 // зі значенням.
-person.workPlace = { city: "Vora", address: "Shevchenko", }
+// person.workPlace = { city: "Vora", address: "Shevchenko", }
 
 // Видалення властивостей: Видаліть властивість професія з об'єкта person.
 // console.log(person.workPlace.address);
@@ -67,15 +67,17 @@ person.workPlace = { city: "Vora", address: "Shevchenko", }
 // Методи об'єкта: Додайте до об'єкта person метод привітання, який буде виводити
 // вітання з іменем особи.
 
-person.sayHello = function () {
-    console.log("Hello", this.name);
+// person.sayHello = function () {
+//     console.log("Hello", this.name);
 
-}
-person.sayHello();
+// }
+// person.sayHello();
 
 
 // Застосування Object.keys(): Виведіть на консоль масив зі всіма ключами об'єкта
 // person за допомогою функції Object.keys().
+// console.log(Object.keys(person));
+
 
 // ---
 
@@ -86,13 +88,27 @@ person.sayHello();
 // Функція повинна приймати два аргументи: ім'я (рядок) і вік (число).
 // Поверни цей об'єкт.
 // ```
+// function createPerson(name, age) {
+//     return {name,age}
+// }
+// const person = createPerson("Oleksandr", 30);
+// console.log(person);
 
 // ---
 
 // ```
 // Напиши функцію, яка приймає об'єкт і додає до нього нову властивість "address" (рядок).
 // Поверни оновлений об'єкт.
-// ```
+// ``
+// function addAddress(obj, address) {
+//     obj.address = address;
+// return obj;
+// }
+// const person = { name: "Oleksandr", age: "25", };
+// const updateObj = addAddress(person, "Shevchenka 47");
+// console.log(updateObj);
+
+
 
 // ---
 
@@ -101,26 +117,50 @@ person.sayHello();
 // Функція повинна змінити значення властивості "age" в об'єкті на нове значення.
 // Поверни оновлений об'єкт.
 // ```
+// function changeValueAge(obj, key, age) {
+//     obj[key] = age;
+//     return obj;
+// }
+//     const person = { name: "Oleksandr", age: "25", };
+// const updateAge = changeValueAge(person, "age", 33);
+// console.log(updateAge);
 
-// ---
+// // ---
 
 // ```
 // Напиши функцію, яка приймає об'єкт і видаляє з нього властивість "age".
 // Поверни оновлений об'єкт.
 // ```
-
+// function changeValueAge(obj) {
+//    delete obj.age
+//     return obj;
+// }
+//     const person = { name: "Oleksandr", age: "25", };
+// const updateAge = changeValueAge(person,);
+// console.log(updateAge);
 // ---
 
 // ```
 // Напиши функцію, яка приймає об'єкт і повертає значення властивості "name".
 // ```
+// function getObj(obj) {
+//     return obj.name;
+// }
+// const person = { name: "Oleksandr", age: "25", };
+// const updateObj = getObj(person);
+// console.log(updateObj);
 
 // ---
 
 // ```
 // Напиши функцію, яка приймає об'єкт і повертає true, якщо властивість "address" існує в об'єкті, і false, якщо ні.
 // ```
-
+// function getObj(obj) {
+//     return obj;
+// }
+// const person = { name: "Oleksandr", age: "25", };
+// const updateObj = getObj(!!person.address);
+// console.log(updateObj);
 // ---
 
 // ```
@@ -128,6 +168,13 @@ person.sayHello();
 // Якщо у об'єктів є однакові властивості, значення другого об'єкта мають замінити значення першого.
 // Поверни результат.
 // ```
+// function getObj(obj) {
+//     return obj;
+// }
+// const person1 = { name: "Oleksandr", surname:"Shevchenko", age: "25", city:"Lviv" };
+// const person2 = { name: "Anton", surname:"Antonov", age: "47", };
+// const mergeObj = { ...person1,...person2 };
+// console.log(mergeObj);
 
 // ---
 
@@ -136,12 +183,30 @@ person.sayHello();
 // Якщо ім'я та вік не передані, встанови їх значення за замовчуванням ("Unknown", 0 відповідно).
 // Поверни об'єкт.
 // ```
+// function createObj(name = "Unknown", age = 0, address) {
+//     return {name, age, address};
+// }
+// const person1 = createObj("Anton", 25, "Zhytomyr");
+// console.log(person1);
+
+// const person2 = createObj();
+// console.log(person2);
+
 
 // ---
 
 // ```
 // Напиши функцію, яка приймає об'єкт та нові значення для імені та віку. Функція повинна змінити обидві властивості в об'єкті. Поверни оновлений об'єкт.
 // ```
+// function getObj(obj, newName, newAge) {
+//     obj.name = newName;
+//     obj.age = newAge;
+//     return obj;
+// }
+// const person = { name: "Oleksandr", age: "25", };
+// const updatePerson = getObj(person, "Ivan", 35);
+// console.log(updatePerson);
+
 
 // ---
 
@@ -150,6 +215,18 @@ person.sayHello();
 // Якщо в об'єкті вже є "email", нічого не роби.
 // Поверни оновлений об'єкт.
 // ```
+// function getObj(obj, email) { 
+//     if (!obj.hasOwnProperty("email")) {
+//        obj.email = email
+//    }
+//     return obj;
+// }
+// const person = { name: "Oleksandr", age: "25", email:"leonov12@gmail.com" };
+// const person1 = { name: "Ivan", age: "25", };
+// const updatePerson = getObj(person, "vasiliev12@gmail.com");
+// const updatePerson1 = getObj(person1,"antonov@gmail.com");
+// console.log(updatePerson);
+// console.log(updatePerson1);
 
 // ---
 
@@ -164,7 +241,18 @@ person.sayHello();
 // Напиши функцію, яка приймає об'єкт і змінює значення властивості "address", але тільки якщо ця властивість вже існує.
 // Якщо її немає, поверни об'єкт без змін.
 // ```
-
+function getObj(obj, newAddress) { 
+    if (obj.hasOwnProperty("address")) {
+        obj.address = newAddress; 
+   }
+    return obj;
+}
+const person = { name: "Oleksandr", age: "25", email:"leonov12@gmail.com", address:"Shevchenka 42" };
+const person1 = { name: "Ivan", age: "25", email:"antonov@gmail.com"};
+const updatePerson = getObj(person, "Antonova 118");
+const updatePerson1 = getObj(person1);
+console.log(updatePerson);
+console.log(updatePerson1);
 // ---
 
 // ```
