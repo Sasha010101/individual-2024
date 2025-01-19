@@ -234,6 +234,14 @@
 // Напиши функцію, яка приймає об'єкт і змінює тип значення властивості "age" з числа на рядок.
 // Поверни оновлений об'єкт.
 // ```
+function changeType(obj) {
+    if (obj.hasOwnProperty("age") && typeof obj.age === "number") {
+        obj.age = String(obj.age)
+    }
+    return obj;
+}
+const person = { name: "Ivan", age: 36, address: "Shevchenka 1" }
+console.log(changeType(person));
 
 // ---
 
@@ -241,19 +249,19 @@
 // Напиши функцію, яка приймає об'єкт і змінює значення властивості "address", але тільки якщо ця властивість вже існує.
 // Якщо її немає, поверни об'єкт без змін.
 // ```
-function getObj(obj, newAddress) { 
-    if (obj.hasOwnProperty("address")) {
-        obj.address = newAddress; 
-   }
-    return obj;
-}
-const person = { name: "Oleksandr", age: "25", email:"leonov12@gmail.com", address:"Shevchenka 42" };
-const person1 = { name: "Ivan", age: "25", email:"antonov@gmail.com"};
-const updatePerson = getObj(person, "Antonova 118");
-const updatePerson1 = getObj(person1);
-console.log(updatePerson);
-console.log(updatePerson1);
-// ---
+// function getObj(obj, newAddress) { 
+//     if (obj.hasOwnProperty("address")) {
+//         obj.address = newAddress; 
+//    }
+//     return obj;
+// }
+// const person = { name: "Oleksandr", age: "25", email:"leonov12@gmail.com", address:"Shevchenka 42" };
+// const person1 = { name: "Ivan", age: "25", email:"antonov@gmail.com"};
+// const updatePerson = getObj(person, "Antonova 118");
+// const updatePerson1 = getObj(person1);
+// console.log(updatePerson);
+// console.log(updatePerson1);
+// // ---
 
 // ```
 // Напиши функцію, яка приймає об'єкт користувача з властивостями name та сity. Та повертає рядок "User {імя користувача} from {місто користувача}!"
