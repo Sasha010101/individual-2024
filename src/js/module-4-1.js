@@ -15,11 +15,8 @@
 // console.log(person.name);
 // console.log(person["name"]);
 
-
 // Зміна властивостей: Змініть вік в об'єкті person на нове значення.
 // person.age = 26;
-
-
 
 // Додавання нових властивостей: Додайте до об'єкта person властивість місце_роботи
 // зі значенням.
@@ -28,10 +25,8 @@
 // Видалення властивостей: Видаліть властивість професія з об'єкта person.
 // console.log(person.workPlace.address);
 
-
 // Пошук властивостей: Перевірте, чи існує властивість професія в об'єкті person.
 // console.log(!!person.workPlace.address);
-
 
 // Зведення декількох об'єктів: Створіть ще один об'єкт friend, який містить
 // інформацію про вашого друга. Потім об'єднайте властивості об'єкта friend з
@@ -46,7 +41,6 @@
 // }
 // console.log(friend);
 
-
 // Перебір властивостей: Виведіть всі властивості об'єкта person на консоль у
 // вигляді ключ-значення.
 // console.log("name", person.name);
@@ -60,10 +54,6 @@
 // const x = 'name'
 // person[x]
 
-
-
-
-
 // Методи об'єкта: Додайте до об'єкта person метод привітання, який буде виводити
 // вітання з іменем особи.
 
@@ -73,11 +63,9 @@
 // }
 // person.sayHello();
 
-
 // Застосування Object.keys(): Виведіть на консоль масив зі всіма ключами об'єкта
 // person за допомогою функції Object.keys().
 // console.log(Object.keys(person));
-
 
 // ---
 
@@ -107,8 +95,6 @@
 // const person = { name: "Oleksandr", age: "25", };
 // const updateObj = addAddress(person, "Shevchenka 47");
 // console.log(updateObj);
-
-
 
 // ---
 
@@ -192,7 +178,6 @@
 // const person2 = createObj();
 // console.log(person2);
 
-
 // ---
 
 // ```
@@ -207,7 +192,6 @@
 // const updatePerson = getObj(person, "Ivan", 35);
 // console.log(updatePerson);
 
-
 // ---
 
 // ```
@@ -215,7 +199,7 @@
 // Якщо в об'єкті вже є "email", нічого не роби.
 // Поверни оновлений об'єкт.
 // ```
-// function getObj(obj, email) { 
+// function getObj(obj, email) {
 //     if (!obj.hasOwnProperty("email")) {
 //        obj.email = email
 //    }
@@ -234,14 +218,14 @@
 // Напиши функцію, яка приймає об'єкт і змінює тип значення властивості "age" з числа на рядок.
 // Поверни оновлений об'єкт.
 // ```
-function changeType(obj) {
-    if (obj.hasOwnProperty("age") && typeof obj.age === "number") {
-        obj.age = String(obj.age)
-    }
-    return obj;
-}
-const person = { name: "Ivan", age: 36, address: "Shevchenka 1" }
-console.log(changeType(person));
+// function changeType(obj) {
+//   if (obj.hasOwnProperty('age') && typeof obj.age === 'number') {
+//     obj.age = String(obj.age);
+//   }
+//   return obj;
+// }
+// const person = { name: 'Ivan', age: 36, address: 'Shevchenka 1' };
+// console.log(changeType(person));
 
 // ---
 
@@ -249,9 +233,9 @@ console.log(changeType(person));
 // Напиши функцію, яка приймає об'єкт і змінює значення властивості "address", але тільки якщо ця властивість вже існує.
 // Якщо її немає, поверни об'єкт без змін.
 // ```
-// function getObj(obj, newAddress) { 
+// function getObj(obj, newAddress) {
 //     if (obj.hasOwnProperty("address")) {
-//         obj.address = newAddress; 
+//         obj.address = newAddress;
 //    }
 //     return obj;
 // }
@@ -266,19 +250,80 @@ console.log(changeType(person));
 // ```
 // Напиши функцію, яка приймає об'єкт користувача з властивостями name та сity. Та повертає рядок "User {імя користувача} from {місто користувача}!"
 // ```
-
+// function task1(obj) {
+//   return `User ${obj.name} from ${obj.city}`;
+// }
+// const user = {
+//   name: 'Oleh',
+//   city: 'Kyiv',
+// };
+// console.log(task1(user));
 // ---
 
 // ```
 // Напиши функцію, яка приймає масив з ключами і значеннями (наприклад, [["name", "John"], ["age", 25], ["address", "123 Street"]]) і створює об'єкт з цих пар. Поверни об'єкт.
 // ```
 
+// function getArray(arr) {
+//   let result = {};
+
+//   for (let array of arr) {
+//     const key = array[0];
+//     const value = array[1];
+//     result[key] = value;
+//   }
+
+//   return result;
+// }
+
+// const arrayArr = [
+//   ['name', 'John'],
+//   ['age', 25],
+//   ['address', '123 Street'],
+// ];
+// console.log(getArray(arrayArr));
 // ---
 
 // ```
 // Напиши функцію, яка приймає масив об'єктів і змінює в кожному з них властивість "age", збільшуючи її на 1. Поверни оновлений масив об'єктів.
 // ```
-
+// function getArrObj(arrObj) {
+//   return arrObj.map(user => {
+//     user.age++;
+//     return user;
+//   });
+// }
+// const users = [
+//   {
+//     id: 1,
+//     name: 'John Doe',
+//     age: 28,
+//     email: 'john.doe@example.com',
+//     isActive: true,
+//   },
+//   {
+//     id: 2,
+//     name: 'Jane Smith',
+//     age: 34,
+//     email: 'jane.smith@example.com',
+//     isActive: false,
+//   },
+//   {
+//     id: 3,
+//     name: 'Alice Johnson',
+//     age: 22,
+//     email: 'alice.johnson@example.com',
+//     isActive: true,
+//   },
+//   {
+//     id: 4,
+//     name: 'Bob Brown',
+//     age: 40,
+//     email: 'bob.brown@example.com',
+//     isActive: true,
+//   },
+// ];
+// console.log(getArrObj(users));
 // ---
 
 // ## ЗАДАЧІ №2
