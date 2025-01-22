@@ -4,6 +4,28 @@
 
 // ```
 // Написати систему контролю банку.
+const bank = {
+  users: [],
+  bankAccounts: [],
+  addUser(firstName, lastName, idCard,) {
+    const objUser = { firstName: firstName, lastName: lastName, idCard: idCard, };
+    this.users.push(objUser);
+    this.addBankAccount(idCard);
+    
+  },
+    
+  addBankAccount(idCard,) {
+    const account = { userIdCard: idCard, balance: 0, }
+    this.bankAccounts.push(account);
+  },
+}
+bank.addUser("Oleksander", "Lymanets", "621tt");
+bank.addUser("Oleksander", "Lymanets", "tguh7217");
+bank.addUser("Oleksander", "Lymanets", "tuh717");
+bank.addUser("Oleksander", "Lymanets", "h76217");
+console.log(bank);
+
+
 
 // Властивості:
 // - список користувачів [userId, FIO,'password']
@@ -32,14 +54,14 @@
 // Каталог товарів: Створіть каталог товарів, де кожен товар буде об'єктом з
 // властивостями назва, ціна та кількість. Додайте методи для додавання товару,
 // видалення товару та підрахунку загальної вартості.
-const object = {
-  products: [],
-  addProduct(name, price, amount) {
-    const item = { name: name, price: price, amount: amount };
-    this.products.push(item);
-  },
-};
-
+// const object = {
+//   products: [],
+//   addProduct(name, price, amount) {
+//     const item = { name: name, price: price, amount: amount };
+//     this.products.push(item);
+//   },
+// };
+// 
 // ---
 
 // Система реєстрації: Створіть систему реєстрації користувачів, де кожен
@@ -100,15 +122,25 @@ const object = {
 // таким ім'ям, ціною та кількістю з об'єкта
 
 // ### Код
+// function calcTotalPrice(stones, stoneName) {
+//   const stone = stones.find((elem) => elem.name === stoneName)
+//   if (stone) {
+//    return `name: ${stone.name} Price: ${stone.price * stone.quantity}`
+//  }
+  
+// }
 
-// ```js
 // const stones = [
 //   { name: 'Смарагд', price: 1300, quantity: 4 },
 //   { name: 'Діамант', price: 2700, quantity: 3 },
 //   { name: 'Сапфір', price: 400, quantity: 7 },
 //   { name: 'Щебінь', price: 200, quantity: 2 },
 // ];
-// ```
+// console.log(calcTotalPrice(stones, "Щебінь"));
+// console.log(calcTotalPrice(stones, "Діамант"))
+// console.log(calcTotalPrice(stones, "Сапфір"))
+// console.log( calcTotalPrice(stones, "Смарагд"))
+
 
 // ## Example 2 - Комплексні завдання
 
